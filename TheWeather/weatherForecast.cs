@@ -14,8 +14,10 @@ namespace TheWeather
 
     public class temp
     {
-        public double day { get; set; } 
+        public double min { get; set; }
+        public double max { get; set; }
     }
+  
     public class weather
     {
         public string main { get; set; } //weather condition
@@ -27,11 +29,11 @@ namespace TheWeather
     }
     public class list
     {
-        public double dt { get; set } //days in millisecond
-        public double pressure { get; set } //pressure in hpa
-        public double humidity { get; set } //humidity in %
-        public double speed { get; set } //wind speed in millisecond
-        public temp temp { get; set; }
+        public double dt { get; set; } //days in millisecond
+        public double pressure { get; set; } //pressure in hpa
+        public double humidity { get; set; } //humidity in %
+        public double speed { get; set; } //wind speed in millisecond
+        public temp temp { get; set; } //min and max temp
         public List<weather> weather { get; set; } //weather list
     }
 }

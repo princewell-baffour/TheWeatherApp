@@ -37,7 +37,18 @@ namespace TheWeather
             this.lbl_condition = new System.Windows.Forms.Label();
             this.lbl_description = new System.Windows.Forms.Label();
             this.lbl_wind = new System.Windows.Forms.Label();
-            this.lbl_ = new System.Windows.Forms.Label();
+            this.lbl_temp1_min = new System.Windows.Forms.Label();
+            this.lbl_temp2_min = new System.Windows.Forms.Label();
+            this.lbl_wind2 = new System.Windows.Forms.Label();
+            this.lbl_desc2 = new System.Windows.Forms.Label();
+            this.lbl_condition2 = new System.Windows.Forms.Label();
+            this.lbl_day2 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_temp1_max = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lbl_temp2_max = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_cityName
@@ -56,7 +67,7 @@ namespace TheWeather
             // 
             this.lbl_Temp.AutoSize = true;
             this.lbl_Temp.Font = new System.Drawing.Font("Lucida Sans Typewriter", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Temp.Location = new System.Drawing.Point(175, 92);
+            this.lbl_Temp.Location = new System.Drawing.Point(136, 115);
             this.lbl_Temp.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbl_Temp.Name = "lbl_Temp";
             this.lbl_Temp.Size = new System.Drawing.Size(26, 27);
@@ -75,7 +86,7 @@ namespace TheWeather
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(965, 37);
+            this.label1.Location = new System.Drawing.Point(714, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 18);
             this.label1.TabIndex = 3;
@@ -84,7 +95,7 @@ namespace TheWeather
             // lbl_days
             // 
             this.lbl_days.AutoSize = true;
-            this.lbl_days.Location = new System.Drawing.Point(948, 90);
+            this.lbl_days.Location = new System.Drawing.Point(697, 94);
             this.lbl_days.Name = "lbl_days";
             this.lbl_days.Size = new System.Drawing.Size(48, 18);
             this.lbl_days.TabIndex = 4;
@@ -93,7 +104,7 @@ namespace TheWeather
             // lbl_condition
             // 
             this.lbl_condition.AutoSize = true;
-            this.lbl_condition.Location = new System.Drawing.Point(945, 120);
+            this.lbl_condition.Location = new System.Drawing.Point(694, 124);
             this.lbl_condition.Name = "lbl_condition";
             this.lbl_condition.Size = new System.Drawing.Size(108, 18);
             this.lbl_condition.TabIndex = 5;
@@ -102,7 +113,7 @@ namespace TheWeather
             // lbl_description
             // 
             this.lbl_description.AutoSize = true;
-            this.lbl_description.Location = new System.Drawing.Point(948, 150);
+            this.lbl_description.Location = new System.Drawing.Point(879, 124);
             this.lbl_description.Name = "lbl_description";
             this.lbl_description.Size = new System.Drawing.Size(118, 18);
             this.lbl_description.TabIndex = 6;
@@ -111,27 +122,137 @@ namespace TheWeather
             // lbl_wind
             // 
             this.lbl_wind.AutoSize = true;
-            this.lbl_wind.Location = new System.Drawing.Point(1150, 97);
+            this.lbl_wind.Location = new System.Drawing.Point(899, 101);
             this.lbl_wind.Name = "lbl_wind";
             this.lbl_wind.Size = new System.Drawing.Size(68, 18);
             this.lbl_wind.TabIndex = 7;
             this.lbl_wind.Text = "12km/h";
             // 
-            // lbl_
+            // lbl_temp1_min
             // 
-            this.lbl_.AutoSize = true;
-            this.lbl_.Location = new System.Drawing.Point(1150, 142);
-            this.lbl_.Name = "lbl_";
-            this.lbl_.Size = new System.Drawing.Size(28, 18);
-            this.lbl_.TabIndex = 8;
-            this.lbl_.Text = "26";
+            this.lbl_temp1_min.AutoSize = true;
+            this.lbl_temp1_min.Location = new System.Drawing.Point(708, 183);
+            this.lbl_temp1_min.Name = "lbl_temp1_min";
+            this.lbl_temp1_min.Size = new System.Drawing.Size(38, 18);
+            this.lbl_temp1_min.TabIndex = 8;
+            this.lbl_temp1_min.Text = "min";
+            // 
+            // lbl_temp2_min
+            // 
+            this.lbl_temp2_min.AutoSize = true;
+            this.lbl_temp2_min.Location = new System.Drawing.Point(708, 311);
+            this.lbl_temp2_min.Name = "lbl_temp2_min";
+            this.lbl_temp2_min.Size = new System.Drawing.Size(38, 18);
+            this.lbl_temp2_min.TabIndex = 13;
+            this.lbl_temp2_min.Text = "min";
+            // 
+            // lbl_wind2
+            // 
+            this.lbl_wind2.AutoSize = true;
+            this.lbl_wind2.Location = new System.Drawing.Point(902, 230);
+            this.lbl_wind2.Name = "lbl_wind2";
+            this.lbl_wind2.Size = new System.Drawing.Size(68, 18);
+            this.lbl_wind2.TabIndex = 12;
+            this.lbl_wind2.Text = "12km/h";
+            // 
+            // lbl_desc2
+            // 
+            this.lbl_desc2.AutoSize = true;
+            this.lbl_desc2.Location = new System.Drawing.Point(899, 253);
+            this.lbl_desc2.Name = "lbl_desc2";
+            this.lbl_desc2.Size = new System.Drawing.Size(118, 18);
+            this.lbl_desc2.TabIndex = 11;
+            this.lbl_desc2.Text = "Description";
+            // 
+            // lbl_condition2
+            // 
+            this.lbl_condition2.AutoSize = true;
+            this.lbl_condition2.Location = new System.Drawing.Point(697, 253);
+            this.lbl_condition2.Name = "lbl_condition2";
+            this.lbl_condition2.Size = new System.Drawing.Size(108, 18);
+            this.lbl_condition2.TabIndex = 10;
+            this.lbl_condition2.Text = "Conditions";
+            // 
+            // lbl_day2
+            // 
+            this.lbl_day2.AutoSize = true;
+            this.lbl_day2.Location = new System.Drawing.Point(700, 223);
+            this.lbl_day2.Name = "lbl_day2";
+            this.lbl_day2.Size = new System.Drawing.Size(48, 18);
+            this.lbl_day2.TabIndex = 9;
+            this.lbl_day2.Text = "Days";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(708, 152);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 18);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "MIN";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(899, 152);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 18);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "MAX";
+            // 
+            // lbl_temp1_max
+            // 
+            this.lbl_temp1_max.AutoSize = true;
+            this.lbl_temp1_max.Location = new System.Drawing.Point(899, 183);
+            this.lbl_temp1_max.Name = "lbl_temp1_max";
+            this.lbl_temp1_max.Size = new System.Drawing.Size(38, 18);
+            this.lbl_temp1_max.TabIndex = 16;
+            this.lbl_temp1_max.Text = "max";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(899, 281);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 18);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "MAX";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(708, 281);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 18);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "MIN";
+            // 
+            // lbl_temp2_max
+            // 
+            this.lbl_temp2_max.AutoSize = true;
+            this.lbl_temp2_max.Location = new System.Drawing.Point(903, 313);
+            this.lbl_temp2_max.Name = "lbl_temp2_max";
+            this.lbl_temp2_max.Size = new System.Drawing.Size(38, 18);
+            this.lbl_temp2_max.TabIndex = 19;
+            this.lbl_temp2_max.Text = "max";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1333, 623);
-            this.Controls.Add(this.lbl_);
+            this.ClientSize = new System.Drawing.Size(1092, 623);
+            this.Controls.Add(this.lbl_temp2_max);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lbl_temp1_max);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbl_temp2_min);
+            this.Controls.Add(this.lbl_wind2);
+            this.Controls.Add(this.lbl_desc2);
+            this.Controls.Add(this.lbl_condition2);
+            this.Controls.Add(this.lbl_day2);
+            this.Controls.Add(this.lbl_temp1_min);
             this.Controls.Add(this.lbl_wind);
             this.Controls.Add(this.lbl_description);
             this.Controls.Add(this.lbl_condition);
@@ -160,7 +281,18 @@ namespace TheWeather
         private System.Windows.Forms.Label lbl_condition;
         private System.Windows.Forms.Label lbl_description;
         private System.Windows.Forms.Label lbl_wind;
-        private System.Windows.Forms.Label lbl_;
+        private System.Windows.Forms.Label lbl_temp1_min;
+        private System.Windows.Forms.Label lbl_temp2_min;
+        private System.Windows.Forms.Label lbl_wind2;
+        private System.Windows.Forms.Label lbl_desc2;
+        private System.Windows.Forms.Label lbl_condition2;
+        private System.Windows.Forms.Label lbl_day2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_temp1_max;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbl_temp2_max;
     }
 }
 
