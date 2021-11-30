@@ -79,7 +79,10 @@ namespace TheWeather
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
+            panel2.BackColor = Color.FromArgb(100, 0, 0, 0);
+            panel3.BackColor = Color.FromArgb(100, 0, 0, 0);
+            panel4.BackColor = Color.FromArgb(100, 0, 0, 0);
         }
     }
 }
