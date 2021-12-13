@@ -57,7 +57,6 @@ namespace TheWeather
                 lbl_temp1_min.Text = string.Format("{0}\u00B0" + "C", forecast.list[1].temp.min);// weather temp min
                 lbl_temp1_max.Text = string.Format("{0}\u00B0" + "C", forecast.list[1].temp.max);// weather temp max
 
-
                 lbl_day2.Text = string.Format("{0}", getDate(forecast.list[2].dt).DayOfWeek); //returns date
                 lbl_wind2.Text = string.Format("{0} km/h", forecast.list[2].speed);// weather wind speed
                 lbl_desc2.Text = string.Format("{0}", forecast.list[2].weather[0].description);// weather description
@@ -65,6 +64,12 @@ namespace TheWeather
                 lbl_temp2_min.Text = string.Format("{0}\u00B0" + "C", forecast.list[2].temp.min);// weather temp min
                 lbl_temp2_max.Text = string.Format("{0}\u00B0" + "C", forecast.list[2].temp.max);// weather temp max
 
+                lbl_day3.Text = string.Format("{0}", getDate(forecast.list[3].dt).DayOfWeek); //returns date
+                lbl_wind3.Text = string.Format("{0} km/h", forecast.list[3].speed);// weather wind speed
+                lbl_desc3.Text = string.Format("{0}", forecast.list[3].weather[0].description);// weather description
+                lbl_condition3.Text = string.Format("{0}", forecast.list[3].weather[0].main);// weather condition
+                lbl_temp3_min.Text = string.Format("{0}\u00B0" + "C", forecast.list[3].temp.min);// weather temp min
+                lbl_temp3_max.Text = string.Format("{0}\u00B0" + "C", forecast.list[3].temp.max);// weather temp max
             }
 
         }
@@ -83,6 +88,7 @@ namespace TheWeather
             panel2.BackColor = Color.FromArgb(100, 0, 0, 0);
             panel3.BackColor = Color.FromArgb(100, 0, 0, 0);
             panel4.BackColor = Color.FromArgb(100, 0, 0, 0);
+            panel5.BackColor = Color.FromArgb(100, 0, 0, 0);
         }
     }
 }

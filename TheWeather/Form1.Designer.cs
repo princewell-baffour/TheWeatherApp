@@ -55,10 +55,22 @@ namespace TheWeather
             this.panel3 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.lbl_day3 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lbl_condition3 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lbl_wind3 = new System.Windows.Forms.Label();
+            this.lbl_temp3_max = new System.Windows.Forms.Label();
+            this.lbl_desc3 = new System.Windows.Forms.Label();
+            this.lbl_temp3_min = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_cityName
@@ -114,9 +126,9 @@ namespace TheWeather
             // 
             this.lbl_days.AutoSize = true;
             this.lbl_days.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_days.Font = new System.Drawing.Font("Lucida Sans Typewriter", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_days.Font = new System.Drawing.Font("Lucida Sans Typewriter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_days.ForeColor = System.Drawing.Color.White;
-            this.lbl_days.Location = new System.Drawing.Point(159, 10);
+            this.lbl_days.Location = new System.Drawing.Point(159, 12);
             this.lbl_days.Name = "lbl_days";
             this.lbl_days.Size = new System.Drawing.Size(68, 27);
             this.lbl_days.TabIndex = 4;
@@ -127,7 +139,7 @@ namespace TheWeather
             this.lbl_condition.AutoSize = true;
             this.lbl_condition.BackColor = System.Drawing.Color.Transparent;
             this.lbl_condition.ForeColor = System.Drawing.Color.White;
-            this.lbl_condition.Location = new System.Drawing.Point(18, 52);
+            this.lbl_condition.Location = new System.Drawing.Point(18, 55);
             this.lbl_condition.Name = "lbl_condition";
             this.lbl_condition.Size = new System.Drawing.Size(95, 18);
             this.lbl_condition.TabIndex = 5;
@@ -138,7 +150,7 @@ namespace TheWeather
             this.lbl_description.AutoSize = true;
             this.lbl_description.BackColor = System.Drawing.Color.Transparent;
             this.lbl_description.ForeColor = System.Drawing.Color.White;
-            this.lbl_description.Location = new System.Drawing.Point(240, 52);
+            this.lbl_description.Location = new System.Drawing.Point(237, 55);
             this.lbl_description.Name = "lbl_description";
             this.lbl_description.Size = new System.Drawing.Size(100, 18);
             this.lbl_description.TabIndex = 6;
@@ -148,19 +160,20 @@ namespace TheWeather
             // 
             this.lbl_wind.AutoSize = true;
             this.lbl_wind.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_wind.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_wind.ForeColor = System.Drawing.Color.White;
-            this.lbl_wind.Location = new System.Drawing.Point(290, 87);
+            this.lbl_wind.Location = new System.Drawing.Point(290, 90);
             this.lbl_wind.Name = "lbl_wind";
-            this.lbl_wind.Size = new System.Drawing.Size(69, 18);
+            this.lbl_wind.Size = new System.Drawing.Size(56, 18);
             this.lbl_wind.TabIndex = 7;
-            this.lbl_wind.Text = "12km/h";
+            this.lbl_wind.Text = "km/h";
             // 
             // lbl_temp1_min
             // 
             this.lbl_temp1_min.AutoSize = true;
             this.lbl_temp1_min.BackColor = System.Drawing.Color.Transparent;
             this.lbl_temp1_min.ForeColor = System.Drawing.Color.White;
-            this.lbl_temp1_min.Location = new System.Drawing.Point(62, 87);
+            this.lbl_temp1_min.Location = new System.Drawing.Point(62, 90);
             this.lbl_temp1_min.Name = "lbl_temp1_min";
             this.lbl_temp1_min.Size = new System.Drawing.Size(38, 18);
             this.lbl_temp1_min.TabIndex = 8;
@@ -181,19 +194,20 @@ namespace TheWeather
             // 
             this.lbl_wind2.AutoSize = true;
             this.lbl_wind2.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_wind2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_wind2.ForeColor = System.Drawing.Color.White;
             this.lbl_wind2.Location = new System.Drawing.Point(290, 96);
             this.lbl_wind2.Name = "lbl_wind2";
-            this.lbl_wind2.Size = new System.Drawing.Size(69, 18);
+            this.lbl_wind2.Size = new System.Drawing.Size(56, 18);
             this.lbl_wind2.TabIndex = 12;
-            this.lbl_wind2.Text = "12km/h";
+            this.lbl_wind2.Text = "km/h";
             // 
             // lbl_desc2
             // 
             this.lbl_desc2.AutoSize = true;
             this.lbl_desc2.BackColor = System.Drawing.Color.Transparent;
             this.lbl_desc2.ForeColor = System.Drawing.Color.White;
-            this.lbl_desc2.Location = new System.Drawing.Point(240, 59);
+            this.lbl_desc2.Location = new System.Drawing.Point(237, 59);
             this.lbl_desc2.Name = "lbl_desc2";
             this.lbl_desc2.Size = new System.Drawing.Size(100, 18);
             this.lbl_desc2.TabIndex = 11;
@@ -214,7 +228,7 @@ namespace TheWeather
             // 
             this.lbl_day2.AutoSize = true;
             this.lbl_day2.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_day2.Font = new System.Drawing.Font("Lucida Sans Typewriter", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_day2.Font = new System.Drawing.Font("Lucida Sans Typewriter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_day2.ForeColor = System.Drawing.Color.White;
             this.lbl_day2.Location = new System.Drawing.Point(159, 13);
             this.lbl_day2.Name = "lbl_day2";
@@ -227,7 +241,7 @@ namespace TheWeather
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(18, 87);
+            this.label2.Location = new System.Drawing.Point(18, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 18);
             this.label2.TabIndex = 14;
@@ -238,7 +252,7 @@ namespace TheWeather
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(18, 119);
+            this.label3.Location = new System.Drawing.Point(18, 122);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 18);
             this.label3.TabIndex = 15;
@@ -249,7 +263,7 @@ namespace TheWeather
             this.lbl_temp1_max.AutoSize = true;
             this.lbl_temp1_max.BackColor = System.Drawing.Color.Transparent;
             this.lbl_temp1_max.ForeColor = System.Drawing.Color.White;
-            this.lbl_temp1_max.Location = new System.Drawing.Point(62, 119);
+            this.lbl_temp1_max.Location = new System.Drawing.Point(62, 122);
             this.lbl_temp1_max.Name = "lbl_temp1_max";
             this.lbl_temp1_max.Size = new System.Drawing.Size(42, 18);
             this.lbl_temp1_max.TabIndex = 16;
@@ -295,7 +309,7 @@ namespace TheWeather
             this.panel1.Controls.Add(this.lbl_Temp);
             this.panel1.Controls.Add(this.lbl_cityName);
             this.panel1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(43, 62);
+            this.panel1.Location = new System.Drawing.Point(29, 198);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(206, 169);
             this.panel1.TabIndex = 20;
@@ -303,17 +317,17 @@ namespace TheWeather
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LightGray;
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.lbl_days);
-            this.panel2.Controls.Add(this.lbl_condition);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.lbl_temp1_min);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.lbl_temp1_max);
-            this.panel2.Controls.Add(this.lbl_wind);
-            this.panel2.Controls.Add(this.lbl_description);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.lbl_condition3);
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.lbl_wind3);
+            this.panel2.Controls.Add(this.lbl_temp3_max);
+            this.panel2.Controls.Add(this.lbl_desc3);
+            this.panel2.Controls.Add(this.lbl_temp3_min);
+            this.panel2.Controls.Add(this.label16);
+            this.panel2.Controls.Add(this.lbl_day3);
             this.panel2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(650, 84);
+            this.panel2.Location = new System.Drawing.Point(650, 426);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(395, 163);
             this.panel2.TabIndex = 21;
@@ -323,7 +337,7 @@ namespace TheWeather
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(236, 87);
+            this.label6.Location = new System.Drawing.Point(236, 90);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 18);
             this.label6.TabIndex = 17;
@@ -342,9 +356,9 @@ namespace TheWeather
             this.panel3.Controls.Add(this.lbl_temp2_min);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(650, 279);
+            this.panel3.Location = new System.Drawing.Point(650, 243);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(395, 160);
+            this.panel3.Size = new System.Drawing.Size(395, 165);
             this.panel3.TabIndex = 22;
             // 
             // label7
@@ -362,10 +376,136 @@ namespace TheWeather
             // 
             this.panel4.BackColor = System.Drawing.Color.LightGray;
             this.panel4.Controls.Add(this.label1);
-            this.panel4.Location = new System.Drawing.Point(667, 12);
+            this.panel4.Location = new System.Drawing.Point(667, 11);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(354, 47);
+            this.panel4.Size = new System.Drawing.Size(354, 44);
             this.panel4.TabIndex = 23;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.LightGray;
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Controls.Add(this.lbl_days);
+            this.panel5.Controls.Add(this.lbl_condition);
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Controls.Add(this.lbl_temp1_min);
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Controls.Add(this.lbl_temp1_max);
+            this.panel5.Controls.Add(this.lbl_wind);
+            this.panel5.Controls.Add(this.lbl_description);
+            this.panel5.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel5.Location = new System.Drawing.Point(650, 65);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(395, 162);
+            this.panel5.TabIndex = 18;
+            // 
+            // lbl_day3
+            // 
+            this.lbl_day3.AutoSize = true;
+            this.lbl_day3.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_day3.Font = new System.Drawing.Font("Lucida Sans Typewriter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_day3.ForeColor = System.Drawing.Color.White;
+            this.lbl_day3.Location = new System.Drawing.Point(161, 17);
+            this.lbl_day3.Name = "lbl_day3";
+            this.lbl_day3.Size = new System.Drawing.Size(68, 27);
+            this.lbl_day3.TabIndex = 10;
+            this.lbl_day3.Text = "Days";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(239, 96);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(56, 18);
+            this.label9.TabIndex = 28;
+            this.label9.Text = "WIND";
+            // 
+            // lbl_condition3
+            // 
+            this.lbl_condition3.AutoSize = true;
+            this.lbl_condition3.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_condition3.ForeColor = System.Drawing.Color.White;
+            this.lbl_condition3.Location = new System.Drawing.Point(16, 59);
+            this.lbl_condition3.Name = "lbl_condition3";
+            this.lbl_condition3.Size = new System.Drawing.Size(95, 18);
+            this.lbl_condition3.TabIndex = 21;
+            this.lbl_condition3.Text = "Conditions";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(16, 96);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(40, 18);
+            this.label11.TabIndex = 25;
+            this.label11.Text = "MIN";
+            // 
+            // lbl_wind3
+            // 
+            this.lbl_wind3.AutoSize = true;
+            this.lbl_wind3.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_wind3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_wind3.ForeColor = System.Drawing.Color.White;
+            this.lbl_wind3.Location = new System.Drawing.Point(293, 96);
+            this.lbl_wind3.Name = "lbl_wind3";
+            this.lbl_wind3.Size = new System.Drawing.Size(56, 18);
+            this.lbl_wind3.TabIndex = 23;
+            this.lbl_wind3.Text = "km/h";
+            // 
+            // lbl_temp3_max
+            // 
+            this.lbl_temp3_max.AutoSize = true;
+            this.lbl_temp3_max.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_temp3_max.ForeColor = System.Drawing.Color.White;
+            this.lbl_temp3_max.Location = new System.Drawing.Point(60, 124);
+            this.lbl_temp3_max.Name = "lbl_temp3_max";
+            this.lbl_temp3_max.Size = new System.Drawing.Size(42, 18);
+            this.lbl_temp3_max.TabIndex = 27;
+            this.lbl_temp3_max.Text = "max";
+            // 
+            // lbl_desc3
+            // 
+            this.lbl_desc3.AutoSize = true;
+            this.lbl_desc3.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_desc3.ForeColor = System.Drawing.Color.White;
+            this.lbl_desc3.Location = new System.Drawing.Point(239, 59);
+            this.lbl_desc3.Name = "lbl_desc3";
+            this.lbl_desc3.Size = new System.Drawing.Size(100, 18);
+            this.lbl_desc3.TabIndex = 22;
+            this.lbl_desc3.Text = "Description";
+            // 
+            // lbl_temp3_min
+            // 
+            this.lbl_temp3_min.AutoSize = true;
+            this.lbl_temp3_min.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_temp3_min.ForeColor = System.Drawing.Color.White;
+            this.lbl_temp3_min.Location = new System.Drawing.Point(60, 96);
+            this.lbl_temp3_min.Name = "lbl_temp3_min";
+            this.lbl_temp3_min.Size = new System.Drawing.Size(38, 18);
+            this.lbl_temp3_min.TabIndex = 24;
+            this.lbl_temp3_min.Text = "min";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(16, 124);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(43, 18);
+            this.label16.TabIndex = 26;
+            this.label16.Text = "MAX";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(29, 29);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(206, 26);
+            this.textBox1.TabIndex = 24;
             // 
             // Form1
             // 
@@ -374,6 +514,8 @@ namespace TheWeather
             this.BackgroundImage = global::TheWeather.Properties.Resources.cloudsoptimized;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1092, 623);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -391,7 +533,10 @@ namespace TheWeather
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -423,6 +568,17 @@ namespace TheWeather
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lbl_condition3;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lbl_wind3;
+        private System.Windows.Forms.Label lbl_temp3_max;
+        private System.Windows.Forms.Label lbl_desc3;
+        private System.Windows.Forms.Label lbl_temp3_min;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lbl_day3;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
