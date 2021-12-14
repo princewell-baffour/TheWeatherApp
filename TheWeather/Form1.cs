@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -23,6 +24,8 @@ namespace TheWeather
             getWeather(cityName);
             getForecast(cityName);
         }
+
+
 
         void getWeather(string city)
         {
@@ -84,11 +87,41 @@ namespace TheWeather
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            button1.Enabled = false;
             panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
             panel2.BackColor = Color.FromArgb(100, 0, 0, 0);
             panel3.BackColor = Color.FromArgb(100, 0, 0, 0);
             panel4.BackColor = Color.FromArgb(100, 0, 0, 0);
             panel5.BackColor = Color.FromArgb(100, 0, 0, 0);
+            panel6.BackColor = Color.FromArgb(100, 0, 0, 0);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //City cityObject = JsonConvert.DeserializeObject<City>(File.ReadAllText(@"city.list.json"));
+            
+            cityName = txt_cityName.Text;
+            getWeather(cityName);
+            getForecast(cityName);
+            
+        }
+
+        private void txt_cityName_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_cityName.Text == "")
+            {
+                button1.Enabled = false;
+            }
+            else
+            {
+                button1.Enabled = true;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            WeatherInfo wi = new WeatherInfo();
+            SqliteDataAccess.SaveData(wi);
         }
     }
 }
