@@ -18,8 +18,11 @@ namespace TheWeather
         //const string APPID = "4ef63234156943cd9ade8f8e845fe62e";
         const string APPID = "542ffd081e67f4512b705f89d2a611b2";
         string cityName = "Geel";
+        public string country, currentdate;
+       
         public Form1()
         {
+            
             InitializeComponent();
             getWeather(cityName);
             getForecast(cityName);
@@ -36,8 +39,8 @@ namespace TheWeather
                 var result = JsonConvert.DeserializeObject<WeatherInfo.Root>(json);
                 WeatherInfo.Root outPut = result;
 
-                lbl_cityName.Text = string.Format("{0}", outPut.name);
-                lbl_country.Text = string.Format("{0}", outPut.sys.country);
+                lbl_cityName.Text = string.Format("{0}, " + outPut.sys.country, outPut.name);
+                country = string.Format("{0}", outPut.sys.country);
                 lbl_Temp.Text = string.Format("{0} \u00B0" + "C", outPut.main.temp);
             }
             
@@ -52,6 +55,14 @@ namespace TheWeather
                 var Object = JsonConvert.DeserializeObject<weatherForecast>(json);
 
                 weatherForecast forecast = Object;
+
+                currentdate = string.Format("{0}", getDate(forecast.list[0].dt)); //returns date
+                Console.WriteLine(currentdate);
+                lbl_0wind.Text = string.Format("{0} km/h", forecast.list[0].speed);// weather wind speed
+                //lbl_description.Text = string.Format("{0}", forecast.list[0].weather[0].description);// weather description
+                lbl_cond.Text = string.Format("{0}", forecast.list[0].weather[0].main);// weather condition
+                lbl_0minTemp.Text = string.Format("{0}\u00B0" + "C", forecast.list[0].temp.min);// weather temp min
+                lbl_0maxTemp.Text = string.Format("{0}\u00B0" + "C", forecast.list[0].temp.max);// weather temp max
 
                 lbl_days.Text = string.Format("{0}", getDate(forecast.list[1].dt).DayOfWeek); //returns date
                 lbl_wind.Text = string.Format("{0} km/h", forecast.list[1].speed);// weather wind speed
@@ -120,8 +131,26 @@ namespace TheWeather
 
         private void button2_Click(object sender, EventArgs e)
         {
-            WeatherInfo wi = new WeatherInfo();
-            SqliteDataAccess.SaveData(wi);
+            try
+            {
+                weatherForecast wf = new weatherForecast();
+                wf.country = country;
+                wf.cityN = lbl_cityName.Text;
+                wf.date = currentdate;
+                wf.cond = lbl_cond.Text;
+                wf.minTemp = lbl_0minTemp.Text;
+                wf.maxTemp = lbl_0maxTemp.Text;
+                wf.wind = lbl_0wind.Text;
+
+                SqliteDataAccess.SaveData(wf);
+                Console.WriteLine(wf.minTemp + " " + wf.wind);
+
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+            }
+            
         }
     }
 }

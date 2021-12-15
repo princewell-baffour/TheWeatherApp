@@ -31,7 +31,7 @@ namespace TheWeather
         {
             this.lbl_cityName = new System.Windows.Forms.Label();
             this.lbl_Temp = new System.Windows.Forms.Label();
-            this.lbl_country = new System.Windows.Forms.Label();
+            this.lbl_cond = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_days = new System.Windows.Forms.Label();
             this.lbl_condition = new System.Windows.Forms.Label();
@@ -70,6 +70,13 @@ namespace TheWeather
             this.panel6 = new System.Windows.Forms.Panel();
             this.lbl8 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lbl_0minTemp = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lbl_0maxTemp = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.lbl_0wind = new System.Windows.Forms.Label();
+            this.lbl_date = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -84,7 +91,7 @@ namespace TheWeather
             this.lbl_cityName.BackColor = System.Drawing.Color.Transparent;
             this.lbl_cityName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_cityName.ForeColor = System.Drawing.Color.White;
-            this.lbl_cityName.Location = new System.Drawing.Point(30, 10);
+            this.lbl_cityName.Location = new System.Drawing.Point(13, 16);
             this.lbl_cityName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbl_cityName.Name = "lbl_cityName";
             this.lbl_cityName.Size = new System.Drawing.Size(53, 25);
@@ -95,26 +102,26 @@ namespace TheWeather
             // 
             this.lbl_Temp.AutoSize = true;
             this.lbl_Temp.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Temp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Temp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Temp.ForeColor = System.Drawing.Color.White;
-            this.lbl_Temp.Location = new System.Drawing.Point(31, 100);
+            this.lbl_Temp.Location = new System.Drawing.Point(13, 45);
             this.lbl_Temp.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbl_Temp.Name = "lbl_Temp";
-            this.lbl_Temp.Size = new System.Drawing.Size(28, 25);
+            this.lbl_Temp.Size = new System.Drawing.Size(27, 25);
             this.lbl_Temp.TabIndex = 1;
             this.lbl_Temp.Text = "C";
             // 
-            // lbl_country
+            // lbl_cond
             // 
-            this.lbl_country.AutoSize = true;
-            this.lbl_country.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_country.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_country.ForeColor = System.Drawing.Color.White;
-            this.lbl_country.Location = new System.Drawing.Point(33, 57);
-            this.lbl_country.Name = "lbl_country";
-            this.lbl_country.Size = new System.Drawing.Size(94, 25);
-            this.lbl_country.TabIndex = 2;
-            this.lbl_country.Text = "Country";
+            this.lbl_cond.AutoSize = true;
+            this.lbl_cond.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_cond.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_cond.ForeColor = System.Drawing.Color.White;
+            this.lbl_cond.Location = new System.Drawing.Point(13, 81);
+            this.lbl_cond.Name = "lbl_cond";
+            this.lbl_cond.Size = new System.Drawing.Size(90, 24);
+            this.lbl_cond.TabIndex = 2;
+            this.lbl_cond.Text = "Condition";
             // 
             // label1
             // 
@@ -134,7 +141,7 @@ namespace TheWeather
             this.lbl_days.BackColor = System.Drawing.Color.Transparent;
             this.lbl_days.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_days.ForeColor = System.Drawing.Color.White;
-            this.lbl_days.Location = new System.Drawing.Point(159, 12);
+            this.lbl_days.Location = new System.Drawing.Point(155, 10);
             this.lbl_days.Name = "lbl_days";
             this.lbl_days.Size = new System.Drawing.Size(70, 29);
             this.lbl_days.TabIndex = 4;
@@ -144,11 +151,11 @@ namespace TheWeather
             // 
             this.lbl_condition.AutoSize = true;
             this.lbl_condition.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_condition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_condition.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_condition.ForeColor = System.Drawing.Color.White;
             this.lbl_condition.Location = new System.Drawing.Point(18, 55);
             this.lbl_condition.Name = "lbl_condition";
-            this.lbl_condition.Size = new System.Drawing.Size(94, 20);
+            this.lbl_condition.Size = new System.Drawing.Size(99, 24);
             this.lbl_condition.TabIndex = 5;
             this.lbl_condition.Text = "Conditions";
             // 
@@ -156,11 +163,11 @@ namespace TheWeather
             // 
             this.lbl_description.AutoSize = true;
             this.lbl_description.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_description.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_description.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_description.ForeColor = System.Drawing.Color.White;
-            this.lbl_description.Location = new System.Drawing.Point(237, 55);
+            this.lbl_description.Location = new System.Drawing.Point(234, 55);
             this.lbl_description.Name = "lbl_description";
-            this.lbl_description.Size = new System.Drawing.Size(100, 20);
+            this.lbl_description.Size = new System.Drawing.Size(104, 24);
             this.lbl_description.TabIndex = 6;
             this.lbl_description.Text = "Description";
             // 
@@ -168,11 +175,11 @@ namespace TheWeather
             // 
             this.lbl_wind.AutoSize = true;
             this.lbl_wind.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_wind.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_wind.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_wind.ForeColor = System.Drawing.Color.White;
-            this.lbl_wind.Location = new System.Drawing.Point(290, 90);
+            this.lbl_wind.Location = new System.Drawing.Point(294, 90);
             this.lbl_wind.Name = "lbl_wind";
-            this.lbl_wind.Size = new System.Drawing.Size(56, 18);
+            this.lbl_wind.Size = new System.Drawing.Size(51, 24);
             this.lbl_wind.TabIndex = 7;
             this.lbl_wind.Text = "km/h";
             // 
@@ -180,11 +187,11 @@ namespace TheWeather
             // 
             this.lbl_temp1_min.AutoSize = true;
             this.lbl_temp1_min.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_temp1_min.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_temp1_min.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_temp1_min.ForeColor = System.Drawing.Color.White;
-            this.lbl_temp1_min.Location = new System.Drawing.Point(62, 90);
+            this.lbl_temp1_min.Location = new System.Drawing.Point(76, 90);
             this.lbl_temp1_min.Name = "lbl_temp1_min";
-            this.lbl_temp1_min.Size = new System.Drawing.Size(37, 20);
+            this.lbl_temp1_min.Size = new System.Drawing.Size(41, 24);
             this.lbl_temp1_min.TabIndex = 8;
             this.lbl_temp1_min.Text = "min";
             // 
@@ -192,11 +199,11 @@ namespace TheWeather
             // 
             this.lbl_temp2_min.AutoSize = true;
             this.lbl_temp2_min.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_temp2_min.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_temp2_min.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_temp2_min.ForeColor = System.Drawing.Color.White;
-            this.lbl_temp2_min.Location = new System.Drawing.Point(57, 96);
+            this.lbl_temp2_min.Location = new System.Drawing.Point(65, 96);
             this.lbl_temp2_min.Name = "lbl_temp2_min";
-            this.lbl_temp2_min.Size = new System.Drawing.Size(37, 20);
+            this.lbl_temp2_min.Size = new System.Drawing.Size(41, 24);
             this.lbl_temp2_min.TabIndex = 13;
             this.lbl_temp2_min.Text = "min";
             // 
@@ -204,11 +211,11 @@ namespace TheWeather
             // 
             this.lbl_wind2.AutoSize = true;
             this.lbl_wind2.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_wind2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_wind2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_wind2.ForeColor = System.Drawing.Color.White;
-            this.lbl_wind2.Location = new System.Drawing.Point(290, 96);
+            this.lbl_wind2.Location = new System.Drawing.Point(292, 96);
             this.lbl_wind2.Name = "lbl_wind2";
-            this.lbl_wind2.Size = new System.Drawing.Size(47, 20);
+            this.lbl_wind2.Size = new System.Drawing.Size(51, 24);
             this.lbl_wind2.TabIndex = 12;
             this.lbl_wind2.Text = "km/h";
             // 
@@ -216,11 +223,11 @@ namespace TheWeather
             // 
             this.lbl_desc2.AutoSize = true;
             this.lbl_desc2.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_desc2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_desc2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_desc2.ForeColor = System.Drawing.Color.White;
-            this.lbl_desc2.Location = new System.Drawing.Point(237, 59);
+            this.lbl_desc2.Location = new System.Drawing.Point(235, 59);
             this.lbl_desc2.Name = "lbl_desc2";
-            this.lbl_desc2.Size = new System.Drawing.Size(100, 20);
+            this.lbl_desc2.Size = new System.Drawing.Size(104, 24);
             this.lbl_desc2.TabIndex = 11;
             this.lbl_desc2.Text = "Description";
             // 
@@ -228,11 +235,11 @@ namespace TheWeather
             // 
             this.lbl_condition2.AutoSize = true;
             this.lbl_condition2.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_condition2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_condition2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_condition2.ForeColor = System.Drawing.Color.White;
             this.lbl_condition2.Location = new System.Drawing.Point(13, 59);
             this.lbl_condition2.Name = "lbl_condition2";
-            this.lbl_condition2.Size = new System.Drawing.Size(94, 20);
+            this.lbl_condition2.Size = new System.Drawing.Size(99, 24);
             this.lbl_condition2.TabIndex = 10;
             this.lbl_condition2.Text = "Conditions";
             // 
@@ -242,7 +249,7 @@ namespace TheWeather
             this.lbl_day2.BackColor = System.Drawing.Color.Transparent;
             this.lbl_day2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_day2.ForeColor = System.Drawing.Color.White;
-            this.lbl_day2.Location = new System.Drawing.Point(159, 13);
+            this.lbl_day2.Location = new System.Drawing.Point(161, 13);
             this.lbl_day2.Name = "lbl_day2";
             this.lbl_day2.Size = new System.Drawing.Size(70, 29);
             this.lbl_day2.TabIndex = 9;
@@ -252,11 +259,11 @@ namespace TheWeather
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(18, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 20);
+            this.label2.Size = new System.Drawing.Size(44, 24);
             this.label2.TabIndex = 14;
             this.label2.Text = "MIN";
             // 
@@ -264,11 +271,11 @@ namespace TheWeather
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(18, 122);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 20);
+            this.label3.Size = new System.Drawing.Size(53, 24);
             this.label3.TabIndex = 15;
             this.label3.Text = "MAX";
             // 
@@ -276,11 +283,11 @@ namespace TheWeather
             // 
             this.lbl_temp1_max.AutoSize = true;
             this.lbl_temp1_max.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_temp1_max.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_temp1_max.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_temp1_max.ForeColor = System.Drawing.Color.White;
-            this.lbl_temp1_max.Location = new System.Drawing.Point(62, 122);
+            this.lbl_temp1_max.Location = new System.Drawing.Point(76, 122);
             this.lbl_temp1_max.Name = "lbl_temp1_max";
-            this.lbl_temp1_max.Size = new System.Drawing.Size(41, 20);
+            this.lbl_temp1_max.Size = new System.Drawing.Size(46, 24);
             this.lbl_temp1_max.TabIndex = 16;
             this.lbl_temp1_max.Text = "max";
             // 
@@ -288,11 +295,11 @@ namespace TheWeather
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(13, 124);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 20);
+            this.label4.Size = new System.Drawing.Size(53, 24);
             this.label4.TabIndex = 18;
             this.label4.Text = "MAX";
             // 
@@ -300,11 +307,11 @@ namespace TheWeather
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(13, 96);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 20);
+            this.label5.Size = new System.Drawing.Size(44, 24);
             this.label5.TabIndex = 17;
             this.label5.Text = "MIN";
             // 
@@ -312,24 +319,31 @@ namespace TheWeather
             // 
             this.lbl_temp2_max.AutoSize = true;
             this.lbl_temp2_max.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_temp2_max.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_temp2_max.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_temp2_max.ForeColor = System.Drawing.Color.White;
-            this.lbl_temp2_max.Location = new System.Drawing.Point(57, 124);
+            this.lbl_temp2_max.Location = new System.Drawing.Point(66, 124);
             this.lbl_temp2_max.Name = "lbl_temp2_max";
-            this.lbl_temp2_max.Size = new System.Drawing.Size(41, 20);
+            this.lbl_temp2_max.Size = new System.Drawing.Size(46, 24);
             this.lbl_temp2_max.TabIndex = 19;
             this.lbl_temp2_max.Text = "max";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.Controls.Add(this.lbl_country);
+            this.panel1.Controls.Add(this.lbl_date);
+            this.panel1.Controls.Add(this.lbl_0wind);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.lbl_0maxTemp);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.lbl_0minTemp);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.lbl_cond);
             this.panel1.Controls.Add(this.lbl_Temp);
             this.panel1.Controls.Add(this.lbl_cityName);
             this.panel1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(49, 198);
+            this.panel1.Location = new System.Drawing.Point(26, 198);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(206, 169);
+            this.panel1.Size = new System.Drawing.Size(330, 169);
             this.panel1.TabIndex = 20;
             // 
             // panel2
@@ -354,11 +368,11 @@ namespace TheWeather
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(239, 96);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(56, 20);
+            this.label9.Size = new System.Drawing.Size(59, 24);
             this.label9.TabIndex = 28;
             this.label9.Text = "WIND";
             // 
@@ -366,11 +380,11 @@ namespace TheWeather
             // 
             this.lbl_condition3.AutoSize = true;
             this.lbl_condition3.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_condition3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_condition3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_condition3.ForeColor = System.Drawing.Color.White;
             this.lbl_condition3.Location = new System.Drawing.Point(16, 59);
             this.lbl_condition3.Name = "lbl_condition3";
-            this.lbl_condition3.Size = new System.Drawing.Size(94, 20);
+            this.lbl_condition3.Size = new System.Drawing.Size(99, 24);
             this.lbl_condition3.TabIndex = 21;
             this.lbl_condition3.Text = "Conditions";
             // 
@@ -378,11 +392,11 @@ namespace TheWeather
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(16, 96);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 20);
+            this.label11.Size = new System.Drawing.Size(44, 24);
             this.label11.TabIndex = 25;
             this.label11.Text = "MIN";
             // 
@@ -390,11 +404,11 @@ namespace TheWeather
             // 
             this.lbl_wind3.AutoSize = true;
             this.lbl_wind3.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_wind3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_wind3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_wind3.ForeColor = System.Drawing.Color.White;
-            this.lbl_wind3.Location = new System.Drawing.Point(293, 96);
+            this.lbl_wind3.Location = new System.Drawing.Point(298, 96);
             this.lbl_wind3.Name = "lbl_wind3";
-            this.lbl_wind3.Size = new System.Drawing.Size(47, 20);
+            this.lbl_wind3.Size = new System.Drawing.Size(51, 24);
             this.lbl_wind3.TabIndex = 23;
             this.lbl_wind3.Text = "km/h";
             // 
@@ -402,11 +416,11 @@ namespace TheWeather
             // 
             this.lbl_temp3_max.AutoSize = true;
             this.lbl_temp3_max.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_temp3_max.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_temp3_max.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_temp3_max.ForeColor = System.Drawing.Color.White;
-            this.lbl_temp3_max.Location = new System.Drawing.Point(60, 124);
+            this.lbl_temp3_max.Location = new System.Drawing.Point(68, 124);
             this.lbl_temp3_max.Name = "lbl_temp3_max";
-            this.lbl_temp3_max.Size = new System.Drawing.Size(41, 20);
+            this.lbl_temp3_max.Size = new System.Drawing.Size(46, 24);
             this.lbl_temp3_max.TabIndex = 27;
             this.lbl_temp3_max.Text = "max";
             // 
@@ -414,11 +428,11 @@ namespace TheWeather
             // 
             this.lbl_desc3.AutoSize = true;
             this.lbl_desc3.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_desc3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_desc3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_desc3.ForeColor = System.Drawing.Color.White;
             this.lbl_desc3.Location = new System.Drawing.Point(239, 59);
             this.lbl_desc3.Name = "lbl_desc3";
-            this.lbl_desc3.Size = new System.Drawing.Size(100, 20);
+            this.lbl_desc3.Size = new System.Drawing.Size(104, 24);
             this.lbl_desc3.TabIndex = 22;
             this.lbl_desc3.Text = "Description";
             // 
@@ -426,11 +440,11 @@ namespace TheWeather
             // 
             this.lbl_temp3_min.AutoSize = true;
             this.lbl_temp3_min.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_temp3_min.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_temp3_min.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_temp3_min.ForeColor = System.Drawing.Color.White;
-            this.lbl_temp3_min.Location = new System.Drawing.Point(60, 96);
+            this.lbl_temp3_min.Location = new System.Drawing.Point(67, 96);
             this.lbl_temp3_min.Name = "lbl_temp3_min";
-            this.lbl_temp3_min.Size = new System.Drawing.Size(37, 20);
+            this.lbl_temp3_min.Size = new System.Drawing.Size(41, 24);
             this.lbl_temp3_min.TabIndex = 24;
             this.lbl_temp3_min.Text = "min";
             // 
@@ -438,11 +452,11 @@ namespace TheWeather
             // 
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
             this.label16.Location = new System.Drawing.Point(16, 124);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(47, 20);
+            this.label16.Size = new System.Drawing.Size(53, 24);
             this.label16.TabIndex = 26;
             this.label16.Text = "MAX";
             // 
@@ -462,11 +476,11 @@ namespace TheWeather
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(236, 90);
+            this.label6.Location = new System.Drawing.Point(234, 90);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 20);
+            this.label6.Size = new System.Drawing.Size(59, 24);
             this.label6.TabIndex = 17;
             this.label6.Text = "WIND";
             // 
@@ -492,11 +506,11 @@ namespace TheWeather
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(236, 96);
+            this.label7.Location = new System.Drawing.Point(234, 96);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 20);
+            this.label7.Size = new System.Drawing.Size(59, 24);
             this.label7.TabIndex = 20;
             this.label7.Text = "WIND";
             // 
@@ -559,6 +573,7 @@ namespace TheWeather
             // 
             this.lbl8.AutoSize = true;
             this.lbl8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl8.ForeColor = System.Drawing.Color.White;
             this.lbl8.Location = new System.Drawing.Point(66, 21);
             this.lbl8.Name = "lbl8";
             this.lbl8.Size = new System.Drawing.Size(88, 20);
@@ -567,6 +582,7 @@ namespace TheWeather
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(51, 149);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(200, 32);
@@ -574,6 +590,90 @@ namespace TheWeather
             this.button2.Text = "Save Data";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(17, 120);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(44, 24);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "MIN";
+            // 
+            // lbl_0minTemp
+            // 
+            this.lbl_0minTemp.AutoSize = true;
+            this.lbl_0minTemp.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_0minTemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_0minTemp.ForeColor = System.Drawing.Color.White;
+            this.lbl_0minTemp.Location = new System.Drawing.Point(61, 120);
+            this.lbl_0minTemp.Name = "lbl_0minTemp";
+            this.lbl_0minTemp.Size = new System.Drawing.Size(41, 24);
+            this.lbl_0minTemp.TabIndex = 4;
+            this.lbl_0minTemp.Tag = "";
+            this.lbl_0minTemp.Text = "min";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(166, 120);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(53, 24);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "MAX";
+            // 
+            // lbl_0maxTemp
+            // 
+            this.lbl_0maxTemp.AutoSize = true;
+            this.lbl_0maxTemp.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_0maxTemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_0maxTemp.ForeColor = System.Drawing.Color.White;
+            this.lbl_0maxTemp.Location = new System.Drawing.Point(217, 120);
+            this.lbl_0maxTemp.Name = "lbl_0maxTemp";
+            this.lbl_0maxTemp.Size = new System.Drawing.Size(46, 24);
+            this.lbl_0maxTemp.TabIndex = 6;
+            this.lbl_0maxTemp.Text = "max";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(166, 85);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(59, 24);
+            this.label14.TabIndex = 7;
+            this.label14.Text = "WIND";
+            // 
+            // lbl_0wind
+            // 
+            this.lbl_0wind.AutoSize = true;
+            this.lbl_0wind.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_0wind.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_0wind.ForeColor = System.Drawing.Color.White;
+            this.lbl_0wind.Location = new System.Drawing.Point(228, 85);
+            this.lbl_0wind.Name = "lbl_0wind";
+            this.lbl_0wind.Size = new System.Drawing.Size(51, 24);
+            this.lbl_0wind.TabIndex = 8;
+            this.lbl_0wind.Text = "km/h";
+            // 
+            // lbl_date
+            // 
+            this.lbl_date.AutoSize = true;
+            this.lbl_date.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_date.ForeColor = System.Drawing.Color.White;
+            this.lbl_date.Location = new System.Drawing.Point(166, 49);
+            this.lbl_date.Name = "lbl_date";
+            this.lbl_date.Size = new System.Drawing.Size(0, 20);
+            this.lbl_date.TabIndex = 9;
             // 
             // Form1
             // 
@@ -615,7 +715,7 @@ namespace TheWeather
 
         private System.Windows.Forms.Label lbl_cityName;
         private System.Windows.Forms.Label lbl_Temp;
-        private System.Windows.Forms.Label lbl_country;
+        private System.Windows.Forms.Label lbl_cond;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_days;
         private System.Windows.Forms.Label lbl_condition;
@@ -654,6 +754,13 @@ namespace TheWeather
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label lbl8;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lbl_0wind;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lbl_0maxTemp;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lbl_0minTemp;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbl_date;
     }
 }
 
