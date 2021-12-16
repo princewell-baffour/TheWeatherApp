@@ -7,27 +7,33 @@ on:
     branches: [ master ]
     
 jobs:
-
   build:
-    runs-on: windows-latest   
+
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        dotnet: [ '5.0.x' ]
+        runtime: [ 'win-x64', 'win-x86' ]
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: 5.0.x
-      - name: setup MSBuild
-        uses: microsoft/setup-msbuild@v1
-        
-      - name: Setup NuGet
-        uses: NuGet/setup-nuget@v1.0.2
-        env:
-          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
-      
-      - name: Restore NuGet packages
-        run: nuget restore TheWeather.sln
-        
-      - name: Build the solution
-        run: msbuild TheWeather.sln /p:Configuration=Release
-        
-      - name: Publish
-        run: dotnet publish -c Release /p:PublishSingleFile=true --no-build
+    - uses: actions/checkout@v2
+    
+    - uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: ${{ matrix.dotnet }}
+    
+    - name: Restore dependencies
+      run: dotnet restore
+    
+    - name: Build
+      run: dotnet build --no-restore
+    
+    - name: Publish
+      run: dotnet publish --configuration Release --runtime ${{ matrix.runtime }} --output ./publish -p:PublishReadyToRun=true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true --self-contained true -p:DebugType=None
+
+    - name: Upload Build Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: TheWeather-${{ matrix.runtime }}-${{ matrix.dotnet }}
+        path: ./publish
+        if-no-files-found: error
