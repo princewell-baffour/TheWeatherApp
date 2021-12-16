@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Dapper;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
-using MessageBox = System.Windows.MessageBox;
+using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace TheWeather
 {
@@ -50,6 +51,14 @@ namespace TheWeather
                 dataGridView1.AutoGenerateColumns = true;
                 dataGridView1.DataSource = ds.DefaultView;
                
+            }
+        }
+        public void deleteData()
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute("DELETE FROM Data");
+
             }
         }
       
@@ -141,7 +150,7 @@ namespace TheWeather
             }
             catch
             {
-                MessageBox.Show("The entered city is incorrect, Please enter a valid city.", "Invalid input", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("The entered city is incorrect, Please enter a valid city.", "Invalid input", MessageBoxButtons.OK, (MessageBoxIcon)MessageBoxImage.Warning);
             }
            
             
@@ -157,6 +166,21 @@ namespace TheWeather
             {
                 button1.Enabled = true;
             }
+        }
+
+        private void btndel_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to clear the data ?", "Confirm Deletion",MessageBoxButtons.YesNo) == DialogResult.Yes) ;
+           
+            {
+                //do something
+            }
+            
+
+
+
+            deleteData();
+            showDbData();
         }
 
         private void button2_Click(object sender, EventArgs e)

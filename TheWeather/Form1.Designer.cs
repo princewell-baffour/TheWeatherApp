@@ -78,6 +78,7 @@ namespace TheWeather
             this.lbl8 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btndel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -687,6 +688,17 @@ namespace TheWeather
             this.dataGridView1.Size = new System.Drawing.Size(515, 183);
             this.dataGridView1.TabIndex = 29;
             // 
+            // btndel
+            // 
+            this.btndel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btndel.Location = new System.Drawing.Point(26, 592);
+            this.btndel.Name = "btndel";
+            this.btndel.Size = new System.Drawing.Size(166, 26);
+            this.btndel.TabIndex = 30;
+            this.btndel.Text = "Clear Saved Data";
+            this.btndel.UseVisualStyleBackColor = true;
+            this.btndel.Click += new System.EventHandler(this.btndel_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
@@ -694,6 +706,7 @@ namespace TheWeather
             this.BackgroundImage = global::TheWeather.Properties.Resources.cloudsoptimized;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1092, 623);
+            this.Controls.Add(this.btndel);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel6);
@@ -776,6 +789,7 @@ namespace TheWeather
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lbl_date;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btndel;
     }
 }
 
