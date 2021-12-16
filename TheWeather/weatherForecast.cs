@@ -9,14 +9,14 @@ namespace TheWeather
     public class weatherForecast
     {
         public string country { get; set; }
-        public string cityN { get; set; }
+        public string ccity { get; set; }
         public string date { get; set; }
         public string cond { get; set; }
         public string minTemp { get; set; }
         public string maxTemp { get; set; }
         public string wind { get; set; }
 
-        public city city { get; set; }
+        //public city city { get; set; }
         public List<list> list { get; set; } //forecast list
     }
 

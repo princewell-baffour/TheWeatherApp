@@ -12,12 +12,15 @@ namespace TheWeather
 {
     class SqliteDataAccess
     {
-         public static List<WeatherInfo> LoadData()
+        
+         
+         public static List<weatherForecast> LoadData()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<WeatherInfo>("select * from Data", new DynamicParameters());
+                var output = cnn.Query<weatherForecast>("select * from Data", new DynamicParameters());
                 return output.ToList();
+                
             }
         }
         public static void SaveData(weatherForecast wforcast)
@@ -25,7 +28,7 @@ namespace TheWeather
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
                 cnn.Execute("INSERT INTO Data (`Date`, `Country`, `City`, `Conditions`, `MinTemperature`, `MaxTemperature`, `Wind`) values" +
-                    " (@date, @country, @cityN, @cond, @minTemp, @maxTemp, @wind)", wforcast);
+                    " (@date, @country, @ccity, @cond, @minTemp, @maxTemp, @wind)", wforcast);
                 Console.WriteLine("Successful");
             }
         }

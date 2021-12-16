@@ -2,14 +2,19 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
+using System.Data.SQLite;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
+using MessageBox = System.Windows.MessageBox;
 
 namespace TheWeather
 {
@@ -26,10 +31,29 @@ namespace TheWeather
             InitializeComponent();
             getWeather(cityName);
             getForecast(cityName);
+            showDbData();
         }
 
-
-
+        private static string LoadConnectionString(string id = "Default")
+        {
+            return ConfigurationManager.ConnectionStrings[id].ConnectionString;
+        }
+        public void showDbData()
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                String stn = "SELECT * FROM Data";
+                SQLiteCommand cmd = new SQLiteCommand(stn, (SQLiteConnection)cnn);
+                SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
+                DataTable ds = new DataTable();
+                da.Fill(ds);
+                dataGridView1.AutoGenerateColumns = true;
+                dataGridView1.DataSource = ds.DefaultView;
+               
+            }
+        }
+      
+       
         void getWeather(string city)
         {
             using (WebClient web = new WebClient())
@@ -56,7 +80,7 @@ namespace TheWeather
 
                 weatherForecast forecast = Object;
 
-                currentdate = string.Format("{0}", getDate(forecast.list[0].dt)); //returns date
+                currentdate = string.Format("{0}", DateTime.Today.ToString("dd-MMM-yyyy")); //returns date
                 Console.WriteLine(currentdate);
                 lbl_0wind.Text = string.Format("{0} km/h", forecast.list[0].speed);// weather wind speed
                 //lbl_description.Text = string.Format("{0}", forecast.list[0].weather[0].description);// weather description
@@ -109,11 +133,17 @@ namespace TheWeather
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //City cityObject = JsonConvert.DeserializeObject<City>(File.ReadAllText(@"city.list.json"));
-            
-            cityName = txt_cityName.Text;
-            getWeather(cityName);
-            getForecast(cityName);
+            try
+            {
+                cityName = txt_cityName.Text;
+                getWeather(cityName);
+                getForecast(cityName);
+            }
+            catch
+            {
+                MessageBox.Show("The entered city is incorrect, Please enter a valid city.", "Invalid input", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+           
             
         }
 
@@ -134,8 +164,8 @@ namespace TheWeather
             try
             {
                 weatherForecast wf = new weatherForecast();
-                wf.country = country;
-                wf.cityN = lbl_cityName.Text;
+                wf.country = country;  //country
+                wf.ccity = lbl_cityName.Text;  //city
                 wf.date = currentdate;
                 wf.cond = lbl_cond.Text;
                 wf.minTemp = lbl_0minTemp.Text;
@@ -143,8 +173,7 @@ namespace TheWeather
                 wf.wind = lbl_0wind.Text;
 
                 SqliteDataAccess.SaveData(wf);
-                Console.WriteLine(wf.minTemp + " " + wf.wind);
-
+                showDbData();
             }
             catch (Exception exc)
             {
