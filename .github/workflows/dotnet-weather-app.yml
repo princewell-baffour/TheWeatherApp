@@ -25,8 +25,8 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     
-    - name: Build
-      run: dotnet build --no-restore
+    #- name: Build
+      #run: dotnet build --no-restore
     
     - name: Publish
       run: dotnet publish --configuration Release --runtime ${{ matrix.runtime }} --output ./publish -p:PublishReadyToRun=true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true --self-contained true -p:DebugType=None
