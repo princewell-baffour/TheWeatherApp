@@ -51,10 +51,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>246B220E11D52FBD3CB735AE081E8E7554B59627</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>B44C6FAFC7D236F5DF319C1775B8426B8570ABEB</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>TheWeather_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>TheWeather_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -144,6 +144,7 @@
     <Content Include="WeatherData.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="TheWeather_1_TemporaryKey.pfx" />
     <None Include="TheWeather_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
