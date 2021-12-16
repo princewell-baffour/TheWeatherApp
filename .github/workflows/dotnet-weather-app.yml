@@ -32,8 +32,8 @@ jobs:
           tag_name: ${{ github.ref }}
           release_name: ${{ github.ref }}
          
-      - uses: csexton/release-asset-actions@v2
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN }}
-          pattern: TheWeather/TheWeather/bin/x64/Release/*.exe
-          release-url: ${{ steps.create-release.output.upload_url }}
+      #- uses: csexton/release-asset-actions@v2
+        #with:
+          #github-token: ${{secrets.GITHUB_TOKEN }}
+          #pattern: TheWeather/TheWeather/bin/x64/Release/*.exe
+          #release-url: ${{ steps.create-release.output.upload_url }}
