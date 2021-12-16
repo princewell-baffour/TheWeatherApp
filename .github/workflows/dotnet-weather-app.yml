@@ -30,4 +30,4 @@ jobs:
         run: msbuild TheWeather.sln /p:Configuration=Release
         
       - name: Publish
-        run: dotnet publish -r -c Release /p:PublishSingleFile=true --no-build
+        run: dotnet publish -c Release /p:PublishSingleFile=true --no-build
