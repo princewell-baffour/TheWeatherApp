@@ -19,7 +19,7 @@ jobs:
         uses: microsoft/setup-msbuild@v1
         
       - name: Setup NuGet
-        uses: NeGet/setup-nuget@v1.0.2
+        uses: NuGet/setup-nuget@v1.0.2
       
       - name: Restore NuGet packages
         run: nuget restore TheWeather.sln
