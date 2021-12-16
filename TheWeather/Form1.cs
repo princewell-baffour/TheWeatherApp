@@ -170,17 +170,17 @@ namespace TheWeather
 
         private void btndel_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to clear the data ?", "Confirm Deletion",MessageBoxButtons.YesNo) == DialogResult.Yes) ;
+            if (MessageBox.Show("Are you sure you want to clear the data ?", "Confirm Deletion", MessageBoxButtons.YesNo) == DialogResult.Yes)
            
             {
-                //do something
+                deleteData();
+                showDbData();
             }
             
 
 
 
-            deleteData();
-            showDbData();
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
