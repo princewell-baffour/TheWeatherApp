@@ -80,7 +80,7 @@ namespace TheWeather
 
                 weatherForecast forecast = Object;
 
-                currentdate = string.Format("{0}", DateTime.Today.ToString("dd-MMM-yyyy")); //returns date
+                currentdate = string.Format("{0}", DateTime.Today.ToString("dd-MM-yy")); //returns date
                 Console.WriteLine(currentdate);
                 lbl_0wind.Text = string.Format("{0} km/h", forecast.list[0].speed);// weather wind speed
                 //lbl_description.Text = string.Format("{0}", forecast.list[0].weather[0].description);// weather description
