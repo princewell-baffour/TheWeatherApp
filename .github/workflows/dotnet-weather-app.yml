@@ -29,3 +29,5 @@ jobs:
       - name: Build the solution
         run: msbuild TheWeather.sln /p:Configuration=Release
         
+      - name: Publish
+        run: dotnet publish
