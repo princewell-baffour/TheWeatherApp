@@ -25,5 +25,5 @@ jobs:
         run: nuget restore TheWeather.sln
         
       - name: Build the solution
-        run: msbuild TheWeather.sln
+        run: msbuild TheWeather.sln /p:Configuration=Release
         
