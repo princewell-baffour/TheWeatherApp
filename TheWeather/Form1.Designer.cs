@@ -29,6 +29,7 @@ namespace TheWeather
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.lbl_cityName = new System.Windows.Forms.Label();
             this.lbl_Temp = new System.Windows.Forms.Label();
             this.lbl_cond = new System.Windows.Forms.Label();
@@ -703,7 +704,7 @@ namespace TheWeather
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TheWeather.Properties.Resources.cloudsoptimized;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1092, 623);
             this.Controls.Add(this.btndel);
