@@ -5,18 +5,23 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-    
+env:
+  PROJECT_PATH: TheWeather/TheWeather.csproj    
 jobs:
-  build:
+  publish:
 
     runs-on: windows-latest
     strategy:
       matrix:
         dotnet: [ '5.0.x' ]
-        runtime: [ 'win-x64', 'win-x86' ]
+        runtime: [ 'win-x64']
 
     steps:
     - uses: actions/checkout@v2
+    - name: Setup .NET Core 3.1	
+      uses: actions/setup-dotnet@v1	
+      with:	
+        dotnet-version: 3.1.x
     
     - uses: actions/setup-dotnet@v1
       with:
@@ -25,11 +30,11 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     
-    #- name: Build
-      #run: dotnet build --no-restore
+    - name: Build
+      run: dotnet build --no-restore
     
     - name: Publish
-      run: dotnet publish --configuration Release --runtime ${{ matrix.runtime }} --output ./publish -p:PublishReadyToRun=true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true --self-contained true -p:DebugType=None
+      run: dotnet publish
 
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v2
