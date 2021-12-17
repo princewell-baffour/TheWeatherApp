@@ -34,7 +34,7 @@ jobs:
       #run: dotnet build --no-restore
     
     - name: Publish
-      run: dotnet publish ${{ env.PROJECT_PATH }} --configuration Release --output ./publish -p:PublishReadyToRun=true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true --self-contained true -p:DebugType=None --no-build
+      run: dotnet publish
 
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v2
