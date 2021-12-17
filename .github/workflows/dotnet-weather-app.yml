@@ -8,7 +8,7 @@ on:
 env:
   PROJECT_PATH: TheWeather/TheWeather.csproj    
 jobs:
-  build:
+  publish:
 
     runs-on: windows-latest
     strategy:
