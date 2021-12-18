@@ -39,8 +39,9 @@ jobs:
       #- name: Build
         #run: dotnet build --configuration Release --no-restore
  
-      #- name: Build the solution
-        #run: msbuild.exe TheWeather.sln /nologo /nr:false /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=True /p:platform="Any CPU" /p:configuration="Release" /p:PublishUrl="../_build"
+      - name: Build the solution
+        run: msbuild.exe TheWeather.sln /nologo /nr:false /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=True /p:platform="Any CPU" /p:configuration="Release" /p:PublishUrl="../_build"
+      
       - name: Publish
         run: dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true
 
