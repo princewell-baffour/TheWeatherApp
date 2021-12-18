@@ -5,29 +5,32 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-env:
-  PROJECT_PATH: TheWeather/TheWeather.csproj    
+    
 jobs:
-  publish:
 
-    runs-on: ubuntu-latest
+  build:
+    runs-on: windows-latest   
     steps:
-    - name: Checkout GitHub actions
-      uses: actions/checkout@v2
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 5.0.x
-    - name: Install dependencies
-      run: dotnet restore "./TheWeather"
-    - name: Build code
-      run: dotnet build "./TheWeather" --configuration Release --no-restore
-    - name: Test code 
-      run: dotnet test "./TheWeather" --no-restore --verbosity normal
-    - name: Publish application
-      run: dotnet publish "./TheWeather" -c Release -o TheWeather
-    - name: Upload Artifacts
-      uses: actions/upload-artifact@v2
-      with:
-       name: my-artifact
-       path: "./TheWeather" 
+      - uses: actions/checkout@v2
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.x
+      - name: setup MSBuild
+        uses: microsoft/setup-msbuild@v1
+        
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v1.0.2
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+      
+      - name: Restore NuGet packages
+        run: nuget restore TheWeather.sln
+        
+      - name: Build the solution
+        run: msbuild TheWeather.sln /p:Configuration=Release /p:platform="Any CPU"
+        
+      - name: Upload artifact
+        uses: actions/upload-artifact@v1.0.0
+        with:
+          name: TheWeather
+          path: "./_build"
