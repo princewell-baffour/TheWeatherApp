@@ -22,20 +22,24 @@ jobs:
         uses: NuGet/setup-nuget@v1.0.5
         env:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
-      - name: Navigate to Workspace
-        run: cd $GITHUB_WORKSPACE
+      #- name: Navigate to Workspace
+        #run: cd $GITHUB_WORKSPACE
 
-      - name: Create Build Directory
-        run: mkdir _build
+      #- name: Create Build Directory
+        #run: mkdir _build
         
       - name: Restore NuGet packages
         run: nuget restore TheWeather.sln
         
-      - name: Build the solution
-        run: msbuild.exe TheWeather.sln /nologo /nr:false /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=True /p:platform="Any CPU" /p:configuration="Release" /p:PublishUrl="../_build"
-        
-      - name: Upload artifact
-        uses: actions/upload-artifact@v1.0.0
+      #- name: Build the solution
+        #run: msbuild.exe TheWeather.sln /nologo /nr:false /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=True /p:platform="Any CPU" /p:configuration="Release" /p:PublishUrl="../_build"
+      - name: Publish
+        run: dotnet publish --configuration Release -r win-x64 --output ./publish -p:PublishReadyToRun=true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true --self-contained true -p:DebugType=None
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v2
         with:
-          name: TheWeather
-          path: "./_build"
+          name: Upload artifact
+          path: ./publish
+          if-no-files-found: error
+     
