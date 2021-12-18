@@ -22,7 +22,12 @@ jobs:
         uses: NuGet/setup-nuget@v1.0.5
         env:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
-      
+      - name: Navigate to Workspace
+        run: cd $GITHUB_WORKSPACE
+
+      - name: Create Build Directory
+        run: mkdir _build
+        
       - name: Restore NuGet packages
         run: nuget restore TheWeather.sln
         
