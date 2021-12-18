@@ -30,8 +30,8 @@ jobs:
       #- name: Create Build Directory
         #run: mkdir _build
         
-      #- name: Restore NuGet packages
-        #run: nuget restore TheWeather.sln
+      - name: Restore NuGet packages
+        run: nuget restore TheWeather.sln
         
       - name: Restore
         run: dotnet restore
