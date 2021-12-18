@@ -12,9 +12,11 @@ jobs:
     runs-on: windows-latest   
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-dotnet@v1
+      - name: Setup .NET Core 5.0
+        uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 5.0.x
+          
       - name: setup MSBuild
         uses: microsoft/setup-msbuild@v1
         
@@ -31,8 +33,8 @@ jobs:
       - name: Restore NuGet packages
         run: nuget restore TheWeather.sln
         
-      - name: Build the solution
-        run: msbuild.exe TheWeather.sln /nologo /nr:false /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=True /p:platform="Any CPU" /p:configuration="Release" /p:PublishUrl="../_build"
+      #- name: Build the solution
+        #run: msbuild.exe TheWeather.sln /nologo /nr:false /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=True /p:platform="Any CPU" /p:configuration="Release" /p:PublishUrl="../_build"
       - name: Publish
         run: dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true
 
