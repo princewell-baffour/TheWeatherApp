@@ -19,15 +19,15 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Install dependencies
-      run: dotnet restore "./myApp"
+      run: dotnet restore "./TheWeather"
     - name: Build code
-      run: dotnet build "./myApp" --configuration Release --no-restore
+      run: dotnet build "./TheWeather" --configuration Release --no-restore
     - name: Test code 
-      run: dotnet test "./myApp" --no-restore --verbosity normal
+      run: dotnet test "./TheWeather" --no-restore --verbosity normal
     - name: Publish application
-      run: dotnet publish "./myApp" -c Release -o myApp
+      run: dotnet publish "./TheWeather" -c Release -o TheWeather
     - name: Upload Artifacts
       uses: actions/upload-artifact@v2
       with:
        name: my-artifact
-       path: "./myApp" 
+       path: "./TheWeather" 
