@@ -15,7 +15,7 @@ jobs:
       - name: Setup .NET Core 5.0
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: 5.0.x
+          dotnet-version: 3.1.x
           
       - name: setup MSBuild
         uses: microsoft/setup-msbuild@v1
