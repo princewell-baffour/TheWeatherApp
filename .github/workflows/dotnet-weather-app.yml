@@ -36,4 +36,4 @@ jobs:
         uses: actions/upload-artifact@v1.0.0
         with:
           name: TheWeather
-          path: "./_build"
+          path: "D:/a/TheWeatherApp/TheWeatherApp/TheWeather/bin/Release/"
