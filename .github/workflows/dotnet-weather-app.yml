@@ -24,7 +24,7 @@ jobs:
         run: nuget restore TheWeather.sln
         
       - name: Build/publishing the solution
-        run: msbuild TheWeather.sln /p:Configuration=Release /p:WebPublishMethod=FileSystem /p:DeployOnBuild=true /p:PublishUrl="../_build"
+        run: msbuild TheWeather.sln /p:Configuration=Release /p:WebPublishMethod=FileSystem /p:DeployOnBuild=true
         
       - name: Upload artifact
         uses: actions/upload-artifact@v1.0.0
