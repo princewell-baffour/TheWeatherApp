@@ -19,15 +19,7 @@ jobs:
         uses: NuGet/setup-nuget@v1.0.2
         env:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
-      - name: Set env
-        run: echo ::set-env name=workspace::$GITHUB_WORKSPACE
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(env) }}
-        run: echo "$GITHUB_CONTEXT"
-      - run: echo $npm_config_cache
-        env:
-          npm_config_cache: ${{ env.workspace }}/frontend_cache
+          
       - name: Navigate to Workspace
         run: cd $GITHUB_WORKSPACE
 
