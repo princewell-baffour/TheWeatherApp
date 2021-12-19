@@ -30,7 +30,7 @@ jobs:
         run: nuget restore TheWeather.sln
         
       - name: Build the solution
-        run: msbuild.exe TheWeather.sln /nologo /nr:false /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=True /p:platform="Any CPU" /p:configuration="Release" /p:PublishUrl="../_build"
+        run: msbuild.exe TheWeather.sln /nologo /nr:false /p:DeployOnBuild=true  /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=True /p:platform="Any CPU" /p:configuration="Release" /p:PublishProfile="../_build"
         
       - name: Upload artifact
         uses: actions/upload-artifact@v1.0.0
