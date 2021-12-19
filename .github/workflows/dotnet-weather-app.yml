@@ -20,20 +20,20 @@ jobs:
         env:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
           
-      #- name: Navigate to Workspace
-        #run: cd $GITHUB_WORKSPACE
+      - name: Navigate to Workspace
+        run: cd $GITHUB_WORKSPACE
 
-      #- name: Create Build Directory
-        #run: mkdir _build
+      - name: Create Build Directory
+        run: mkdir _build
         
       - name: Restore NuGet packages
         run: nuget restore TheWeather.sln
         
       - name: Build the solution
-        run: msbuild TheWeather.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
+        run: msbuild TheWeather.sln /p:Configuration=Release /p:WebPublishMethod=FileSystem /p:DeployOnBuild=true /p:PublishUrl="../_build"
         
       - name: Upload artifact
         uses: actions/upload-artifact@v1.0.0
         with:
           name: TheWeather
-          path: bin\Release\publish
+          path: "./_build"
